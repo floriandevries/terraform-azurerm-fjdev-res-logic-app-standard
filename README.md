@@ -1,0 +1,1 @@
+# terraform-azurerm-cgk-res-logic-app-standard
