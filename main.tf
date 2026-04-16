@@ -70,7 +70,7 @@ resource "azurerm_logic_app_standard" "logic" {
         }
       }
       dynamic "ip_restriction" {
-        for_each = site_config.value.ip_restriction
+        for_each = site_config.value.ip_restriction != null ? site_config.value.ip_restriction : []
 
         content {
           action                    = ip_restriction.value.action
@@ -94,7 +94,7 @@ resource "azurerm_logic_app_standard" "logic" {
         }
       }
       dynamic "scm_ip_restriction" {
-        for_each = site_config.value.scm_ip_restriction
+        for_each = site_config.value.scm_ip_restriction != null ? site_config.value.scm_ip_restriction : []
 
         content {
           action                    = scm_ip_restriction.value.action
