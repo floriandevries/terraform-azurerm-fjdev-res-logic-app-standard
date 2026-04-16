@@ -17,7 +17,7 @@ resource "azurerm_logic_app_standard" "logic" {
   storage_account_share_name               = var.storage_account_share_name
   tags                                     = var.tags
   use_extension_bundle                     = var.use_extension_bundle
-  version                                  = var.version
+  version                                  = var.runtime_version
   virtual_network_subnet_id                = var.virtual_network_subnet_id
   vnet_content_share_enabled               = var.vnet_content_share_enabled
 

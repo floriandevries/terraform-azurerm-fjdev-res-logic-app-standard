@@ -263,7 +263,7 @@ variable "use_extension_bundle" {
   description = "Should the logic app use the bundled extension package? If true, then application settings for `AzureFunctionsJobHost__extensionBundle__id` and `AzureFunctionsJobHost__extensionBundle__version` will be created."
 }
 
-variable "version" {
+variable "runtime_version" {
   type        = string
   default     = "~4"
   description = "The runtime version associated with the Logic App."
