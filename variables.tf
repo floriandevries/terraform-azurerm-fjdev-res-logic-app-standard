@@ -117,6 +117,12 @@ DESCRIPTION
   }
 }
 
+variable "runtime_version" {
+  type        = string
+  default     = "~4"
+  description = "The runtime version associated with the Logic App."
+}
+
 variable "scm_publish_basic_authentication_enabled" {
   type        = bool
   default     = true
@@ -256,12 +262,6 @@ variable "use_extension_bundle" {
   type        = bool
   default     = true
   description = "Should the logic app use the bundled extension package? If true, then application settings for `AzureFunctionsJobHost__extensionBundle__id` and `AzureFunctionsJobHost__extensionBundle__version` will be created."
-}
-
-variable "runtime_version" {
-  type        = string
-  default     = "~4"
-  description = "The runtime version associated with the Logic App."
 }
 
 variable "virtual_network_subnet_id" {
