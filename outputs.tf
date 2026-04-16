@@ -44,4 +44,5 @@ A `site_credential` block as defined below, which contains the site-level creden
 - `password`    - The password for the site-level credentials.
 DESCRIPTION
   value       = azurerm_logic_app_standard.logic.site_credential
+  sensitive = true
 }

@@ -53,11 +53,6 @@ variable "client_certificate_mode" {
   type        = string
   default     = null
   description = "The mode of the Logic App's client certificates requirement for incoming requests. Possible values are `Required`, `Optional`, and `OptionalInteractiveUser`."
-
-  validation {
-    condition     = contains(["Required", "Optional", "OptionalInteractiveUser"], var.client_certificate_mode)
-    error_message = "The value of `client_certificate_mode` must be one of 'Required', 'Optional', or 'OptionalInteractiveUser'."
-  }
 }
 
 variable "connection_string" {
@@ -151,10 +146,10 @@ variable "site_config" {
       priority                  = optional(number)
       action                    = optional(string, "Allow")
       headers = optional(object({
-        x_azure_fdid      = optional(string)
-        x_fd_health_probe = optional(string)
-        x_forwarded_for   = optional(string)
-        x_forwarded_host  = optional(string)
+        x_azure_fdid      = optional(list(string))
+        x_fd_health_probe = optional(list(string))
+        x_forwarded_for   = optional(list(string))
+        x_forwarded_host  = optional(list(string))
       }))
     })))
     scm_ip_restriction = optional(list(object({
@@ -166,10 +161,10 @@ variable "site_config" {
       priority                  = optional(number)
       action                    = optional(string, "Allow")
       headers = optional(object({
-        x_azure_fdid      = optional(string)
-        x_fd_health_probe = optional(string)
-        x_forwarded_for   = optional(string)
-        x_forwarded_host  = optional(string)
+        x_azure_fdid      = optional(list(string))
+        x_fd_health_probe = optional(list(string))
+        x_forwarded_for   = optional(list(string))
+        x_forwarded_host  = optional(list(string))
       }))
     })))
     scm_use_main_ip_restriction      = optional(bool, false)
